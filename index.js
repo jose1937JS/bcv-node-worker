@@ -65,7 +65,7 @@ async function updateExchangeRate(env) {
   const query = `
     UPDATE store_settings 
     SET exchange_rate_ves = ?
-    WHERE id = 'default'
+    WHERE id = '1'
   `;
 
   const result = await env.DB.prepare(query)
