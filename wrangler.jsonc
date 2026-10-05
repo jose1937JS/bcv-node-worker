@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "d1-rate-updater",
+  "main": "./index.js",
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "da0637af-2641-466b-9b33-856682857bd6"
+    }
+  ],
+  "triggers": {
+    "crons": ["0 12 * * *"]
+  }
+}
