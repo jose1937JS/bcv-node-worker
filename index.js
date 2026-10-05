@@ -73,6 +73,7 @@ async function updateExchangeRate(env) {
     .run();
 
   if (!result.success) {
+    console.log("ERROR AL ACTUALIZAR: ", result)
     throw new Error("Fallo al escribir en la base de datos D1");
   }
 
