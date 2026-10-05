@@ -58,12 +58,14 @@ async function updateExchangeRate(env) {
     throw new Error("El valor obtenido de la tasa no es un número válido");
   }
 
+  console.log(newRate)
+
   // Actualización en Cloudflare D1
   // Si tu tabla tiene múltiples filas, agrega un WHERE (ej: WHERE id = 1)
   const query = `
     UPDATE store_settings 
     SET exchange_rate_ves = ?
-    WHERE id = default
+    WHERE id = 'default'
   `;
 
   const result = await env.DB.prepare(query)

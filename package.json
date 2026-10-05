@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "wrangler dev",
+    "dev:remote": "wrangler dev --remote",
     "deploy": "wrangler deploy"
   },
   "keywords": [],
