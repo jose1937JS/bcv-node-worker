@@ -6,6 +6,7 @@
   "d1_databases": [
     {
       "binding": "DB",
+      "database_name": "catalogo-db",
       "database_id": "da0637af-2641-466b-9b33-856682857bd6"
     }
   ],

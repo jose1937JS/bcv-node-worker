@@ -39,10 +39,9 @@ export default {
  * Consulta la tasa externa y actualiza Cloudflare D1
  */
 async function updateExchangeRate(env) {
-  // Reemplaza con la URL de tu API proveedora de la tasa
-  const API_URL = "https://api.tu-servicio.com/exchange-rate";
+  const apiUrl = env?.RATES_API_URL || "https://rates-backend.vercel.app/rates/BCV_USD/";
 
-  const response = await fetch(API_URL, {
+  const response = await fetch(apiUrl, {
     headers: { "User-Agent": "Cloudflare-Worker" },
   });
 
@@ -64,7 +63,7 @@ async function updateExchangeRate(env) {
   const query = `
     UPDATE store_settings 
     SET exchange_rate_ves = ?
-    WHERE id = 1
+    WHERE id = default
   `;
 
   const result = await env.DB.prepare(query)
